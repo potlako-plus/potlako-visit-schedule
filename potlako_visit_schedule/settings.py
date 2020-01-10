@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+APP_NAME = 'potlako_visit_schedule'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -35,8 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'edc_visit_schedule.apps.AppConfig',
+    'potlako_visit_schedule.apps.AppConfig',
 ]
 
 MIDDLEWARE = [
@@ -85,18 +89,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME':
+     'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+     },
+    {'NAME':
+     'django.contrib.auth.password_validation.MinimumLengthValidator',
+     },
+    {'NAME':
+     'django.contrib.auth.password_validation.CommonPasswordValidator',
+     },
+    {'NAME':
+     'django.contrib.auth.password_validation.NumericPasswordValidator',
+     },
 ]
 
 
