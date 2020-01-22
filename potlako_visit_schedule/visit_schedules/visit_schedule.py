@@ -7,7 +7,7 @@ visit_schedule1 = VisitSchedule(
     verbose_name='potlako',
     offstudy_model='potlako_prn.subjectoffstudy',
     locator_model='potlako_subject.subject_locator',
-    death_report_model='potlako_subject.death_reportt',
+    death_report_model='potlako_prn.death_report',
     previous_visit_schedule=None)
 
 visit_schedule1.add_schedule(schedule1)
