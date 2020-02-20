@@ -14,6 +14,6 @@ crfs_1000 = FormsCollection(
     Crf(show_order=9, model='potlako_subject.patientstatus'),
     Crf(show_order=10, model='potlako_subject.missedcall'),
     name='initial',
-    )
+)
 
 crf.update({1000: crfs_1000})
