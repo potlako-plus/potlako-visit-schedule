@@ -7,7 +7,7 @@ from .requisitions import requisitions
 # schedule for new participants
 schedule1 = Schedule(
     name='schedule',
-    verbose_name='Potlako',
+    verbose_name='Potlako+',
     onschedule_model='potlako_subject.onschedule',
     offschedule_model='potlako_prn.subjectoffstudy',
     consent_model='potlako_subject.subjectconsent',
@@ -21,8 +21,19 @@ visit0 = Visit(
     rlower=relativedelta(days=0),
     rupper=relativedelta(days=0),
     requisitions=requisitions,
-    crfs=crf.get(1000),
+    crfs=crf.get('initial'),
     facility_name='5-day clinic')
 
+visit1 = Visit(
+    code='1010',
+    title='Followup Visit',
+    timepoint=1,
+    rbase=relativedelta(days=10),
+    rlower=relativedelta(days=0),
+    rupper=relativedelta(days=0),
+    requisitions=requisitions,
+    crfs=crf.get('unscheduled'),
+    facility_name='5-day clinic')
 
 schedule1.add_visit(visit=visit0)
+schedule1.add_visit(visit=visit1)
