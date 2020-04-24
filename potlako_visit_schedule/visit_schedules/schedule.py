@@ -1,8 +1,23 @@
 from dateutil.relativedelta import relativedelta
-from edc_visit_schedule import Schedule, Visit
+from edc_visit_schedule import Schedule, Visit as BaseVisit
 
-from .crfs import crf
+from .crfs import crf, potlako_crfs_prn
 from .requisitions import requisitions
+
+
+class Visit(BaseVisit):
+
+    def __init__(self, crfs_unscheduled=None, requisitions_unscheduled=None,
+                 crfs_prn=None, requisitions_prn=None,
+                 allow_unscheduled=None, **kwargs):
+        super().__init__(
+            allow_unscheduled=True if allow_unscheduled is None else allow_unscheduled,
+            crfs_unscheduled=crf.get('unscheduled') or crfs_unscheduled,
+            requisitions_unscheduled=requisitions_unscheduled,
+            crfs_prn=potlako_crfs_prn or crfs_prn,
+            requisitions_prn=requisitions_prn,
+            **kwargs)
+
 
 # schedule for new participants
 schedule1 = Schedule(
