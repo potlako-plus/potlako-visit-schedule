@@ -5,6 +5,8 @@ crf = {}
 potlako_crfs_prn = FormsCollection(
     Crf(show_order=1, model='potlako_subject.cliniciancallfollowup',
         required=False, additional=False),
+    Crf(show_order=2, model='potlako_subject.medicaldiagnosis',
+        required=False, additional=False),
     name='potlako_crf_prn')
 
 crfs_1000 = FormsCollection(
