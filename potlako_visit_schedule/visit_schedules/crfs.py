@@ -29,7 +29,7 @@ crfs_unscheduled = FormsCollection(
     Crf(show_order=4, model='potlako_subject.homevisit', required=False),
     Crf(show_order=5, model='potlako_subject.physicianreview', required=False),
     Crf(show_order=6, model='potlako_subject.investigations', required=False),
-    Crf(show_order=6, model='potlako_subject.medicaldiagnosis', required=False),
+    Crf(show_order=7, model='potlako_subject.medicaldiagnosis', required=False),
     name='unscheduled',
 )
 
