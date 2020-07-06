@@ -19,16 +19,17 @@ crfs_1000 = FormsCollection(
     Crf(show_order=3, model='potlako_subject.homevisit', required=False),
     Crf(show_order=4, model='potlako_subject.physicianreview', required=False),
     Crf(show_order=5, model='potlako_subject.investigations', required=False),
+    Crf(show_order=6, model='potlako_subject.medicaldiagnosis', required=False),
     name='initial',
 )
 
 crfs_unscheduled = FormsCollection(
     Crf(show_order=1, model='potlako_subject.patientcallfollowup',),
-    Crf(show_order=2, model='potlako_subject.cliniciancallfollowup'),
     Crf(show_order=3, model='potlako_subject.transport', required=False),
     Crf(show_order=4, model='potlako_subject.homevisit', required=False),
     Crf(show_order=5, model='potlako_subject.physicianreview', required=False),
     Crf(show_order=6, model='potlako_subject.investigations', required=False),
+    Crf(show_order=6, model='potlako_subject.medicaldiagnosis', required=False),
     name='unscheduled',
 )
 
