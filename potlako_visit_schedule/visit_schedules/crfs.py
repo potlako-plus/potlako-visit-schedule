@@ -11,7 +11,7 @@ potlako_crfs_prn = FormsCollection(
         required=False, additional=False),
     name='potlako_crf_prn')
 
-crfs_1000 = FormsCollection(
+crfs_initial = FormsCollection(
     Crf(show_order=1, model='potlako_subject.patientcallinitial'),
     Crf(show_order=2, model='potlako_subject.transport', required=False),
     Crf(show_order=3, model='potlako_subject.homevisit', required=False),
@@ -33,6 +33,12 @@ crfs_unscheduled = FormsCollection(
     name='unscheduled',
 )
 
-crf.update({'initial': crfs_1000,
+crfs_scheduled_followup = FormsCollection(
+    Crf(show_order=1, model='potlako_subject.cancerdiagnosisandtreatmentassessment'),
+    name='scheduled_followup',
+)
+
+crf.update({'initial': crfs_initial,
+            'followup': crfs_scheduled_followup,
             'unscheduled': crfs_unscheduled,
             'prn': potlako_crfs_prn})

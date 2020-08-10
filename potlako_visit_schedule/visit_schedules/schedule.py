@@ -40,15 +40,39 @@ visit0 = Visit(
     facility_name='5-day clinic')
 
 visit1 = Visit(
-    code='1010',
+    code='2000',
     title='Followup Visit',
     timepoint=1,
-    rbase=relativedelta(days=10),
+    rbase=relativedelta(day=1),
     rlower=relativedelta(days=0),
-    rupper=relativedelta(days=0),
+    rupper=relativedelta(days=90),
     requisitions=requisitions,
     crfs=crf.get('unscheduled'),
     facility_name='5-day clinic')
 
+visit2 = Visit(
+    code='3000',
+    title='6 months Visit',
+    timepoint=2,
+    rbase=relativedelta(months=6),
+    rlower=relativedelta(days=0),
+    rupper=relativedelta(days=0),
+    requisitions=requisitions,
+    crfs=crf.get('followup'),
+    facility_name='5-day clinic')
+
+visit3 = Visit(
+    code='4000',
+    title='12 months Visit',
+    timepoint=3,
+    rbase=relativedelta(months=12),
+    rlower=relativedelta(days=0),
+    rupper=relativedelta(days=0),
+    requisitions=requisitions,
+    crfs=crf.get('followup'),
+    facility_name='5-day clinic')
+
 schedule1.add_visit(visit=visit0)
 schedule1.add_visit(visit=visit1)
+schedule1.add_visit(visit=visit2)
+schedule1.add_visit(visit=visit3)
