@@ -1,2 +1,2 @@
-from .schedules import enhanced_care_schedule, intervention_schedule
-from .visit_schedule import intervention_visit_schedule, enhanced_care_visit_schedule
+from .schedule import potlako_plus_schedule
+from .visit_schedule import potlako_visit_schedule

@@ -13,16 +13,17 @@ potlako_crfs_prn = FormsCollection(
 
 crfs_initial = FormsCollection(
     Crf(show_order=1, model='potlako_subject.patientcallinitial'),
-    Crf(show_order=2, model='potlako_subject.transport', required=False),
-    Crf(show_order=3, model='potlako_subject.homevisit', required=False),
-    Crf(show_order=4, model='potlako_subject.physicianreview', required=False),
-    Crf(show_order=5, model='potlako_subject.investigationsordered', required=False),
-    Crf(show_order=6, model='potlako_subject.investigationsresulted', required=False),
-    Crf(show_order=7, model='potlako_subject.medicaldiagnosis', required=False),
+    Crf(show_order=2, model='potlako_subject.symptomandcareseekingassessment'),
+    Crf(show_order=3, model='potlako_subject.transport', required=False),
+    Crf(show_order=4, model='potlako_subject.homevisit', required=False),
+    Crf(show_order=5, model='potlako_subject.physicianreview', required=False),
+    Crf(show_order=6, model='potlako_subject.investigationsordered', required=False),
+    Crf(show_order=7, model='potlako_subject.investigationsresulted', required=False),
+    Crf(show_order=8, model='potlako_subject.medicaldiagnosis', required=False),
     name='initial',
 )
 
-crfs_post_scheduled = FormsCollection(
+crfs_unscheduled = FormsCollection(
     Crf(show_order=1, model='potlako_subject.patientcallfollowup',),
     Crf(show_order=2, model='potlako_subject.transport', required=False),
     Crf(show_order=3, model='potlako_subject.homevisit', required=False),
@@ -30,7 +31,7 @@ crfs_post_scheduled = FormsCollection(
     Crf(show_order=5, model='potlako_subject.investigationsordered', required=False),
     Crf(show_order=6, model='potlako_subject.investigationsresulted', required=False),
     Crf(show_order=7, model='potlako_subject.medicaldiagnosis', required=False),
-    name='post_scheduled_followup',
+    name='post_unscheduled',
 )
 
 crfs_followup = FormsCollection(
@@ -40,5 +41,5 @@ crfs_followup = FormsCollection(
 
 crf.update({'initial': crfs_initial,
             'followup': crfs_followup,
-            'post_scheduled': crfs_post_scheduled,
+            'unscheduled': crfs_unscheduled,
             'prn': potlako_crfs_prn})
