@@ -24,7 +24,7 @@ crfs_initial = FormsCollection(
 
 crfs_unscheduled = FormsCollection(
     Crf(show_order=1, model='potlako_subject.patientcallfollowup',),
-    Crf(show_order=2, model='potlako_subject.cancerdiagnosisandtreatmentassessment',),
+    Crf(show_order=2, model='potlako_subject.cancerdxandtx',),
     Crf(show_order=3, model='potlako_subject.transport', required=False),
     Crf(show_order=4, model='potlako_subject.missedvisit', required=False),
     Crf(show_order=5, model='potlako_subject.investigationsordered', required=False),
@@ -34,7 +34,7 @@ crfs_unscheduled = FormsCollection(
 
 crfs_followup = FormsCollection(
     Crf(show_order=1, model='potlako_subject.patientcallfollowup'),
-    Crf(show_order=2, model='potlako_subject.cancerdiagnosisandtreatmentassessment'),
+    Crf(show_order=2, model='potlako_subject.cancerdxandtx'),
     Crf(show_order=3, model='potlako_subject.transport', required=False),
     Crf(show_order=4, model='potlako_subject.investigationsordered', required=False),
     Crf(show_order=5, model='potlako_subject.investigationsresulted', required=False),
