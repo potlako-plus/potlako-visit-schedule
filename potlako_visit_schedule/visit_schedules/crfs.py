@@ -5,10 +5,6 @@ crf = {}
 potlako_crfs_prn = FormsCollection(
     Crf(show_order=1, model='potlako_subject.missedcall',
         required=False, additional=False),
-    Crf(show_order=2, model='potlako_subject.homevisit',
-        required=False, additional=False),
-    Crf(show_order=3, model='potlako_subject.sms',
-        required=False, additional=False),
     name='potlako_crf_prn')
 
 crfs_initial = FormsCollection(
